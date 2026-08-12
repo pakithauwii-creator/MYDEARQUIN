@@ -137,11 +137,24 @@ function updateProgress() {
 
     }
 
+    /* Check if all sections are explored to trigger final popup */
+    if (completed === total && !localStorage.getItem("quinnFinalShown")) {
+
+        localStorage.setItem("quinnFinalShown", "true");
+
+        setTimeout(() => {
+
+            showFinalMessage();
+
+        }, 1000);
+
+    }
+
 }
 
 
 /* ==========================================
-   CHOICE BUTTONS
+   CHOICE BUTTONS & WEB3FORMS MAPPING
 ========================================== */
 
 document.addEventListener(
@@ -174,9 +187,27 @@ document.addEventListener(
         );
 
 
+        const choiceValue = button.getAttribute("data-value") || button.innerText;
+
+        /* Map selection to hidden input for Web3Forms */
+        const targetId = container.getAttribute("data-target");
+
+        if (targetId) {
+
+            const hiddenInput = document.getElementById(targetId);
+
+            if (hiddenInput) {
+
+                hiddenInput.value = choiceValue;
+
+            }
+
+        }
+
+
         saveAnswer(
             button.closest(".question-card"),
-            button.innerText
+            choiceValue
         );
 
     }
@@ -220,7 +251,7 @@ document.addEventListener(
 
         const key =
             "quinn_" +
-            question.innerText;
+            question.innerText.trim();
 
 
         localStorage.setItem(
@@ -233,7 +264,7 @@ document.addEventListener(
 
 
 /* ==========================================
-   RESTORE TEXT ANSWERS
+   RESTORE TEXT ANSWERS & CHOICES
 ========================================== */
 
 function restoreAnswers() {
@@ -260,7 +291,7 @@ function restoreAnswers() {
 
             const key =
                 "quinn_" +
-                question.innerText;
+                question.innerText.trim();
 
 
             const saved =
@@ -271,6 +302,50 @@ function restoreAnswers() {
 
                 textarea.value =
                     saved;
+
+            }
+
+        });
+
+
+    /* Restore button selections and populate hidden inputs */
+    document
+        .querySelectorAll(".choices")
+        .forEach(container => {
+
+            const card = container.closest(".question-card, .sub-card");
+
+            if (!card) return;
+
+            const question = card.querySelector("h3");
+
+            if (!question) return;
+
+            const savedChoice = localStorage.getItem("choice_" + question.innerText.trim());
+
+            if (savedChoice) {
+
+                const targetId = container.getAttribute("data-target");
+
+                if (targetId) {
+
+                    const hiddenInput = document.getElementById(targetId);
+
+                    if (hiddenInput) hiddenInput.value = savedChoice;
+
+                }
+
+                container.querySelectorAll("button").forEach(btn => {
+
+                    const val = btn.getAttribute("data-value") || btn.innerText;
+
+                    if (val.trim() === savedChoice.trim()) {
+
+                        btn.classList.add("selected");
+
+                    }
+
+                });
 
             }
 
@@ -296,11 +371,38 @@ function saveAnswer(card, answer) {
 
 
     localStorage.setItem(
-        "choice_" + question.innerText,
+        "choice_" + question.innerText.trim(),
         answer
     );
 
 }
+
+
+/* ==========================================
+   WEB3FORMS SUBMIT HANDLING
+========================================== */
+
+document.addEventListener("submit", function(event) {
+
+    const form = event.target;
+
+    if (form.tagName === "FORM") {
+
+        const btn = form.querySelector(".submit-btn");
+
+        if (btn) {
+
+            btn.innerText = "Sending to your King... 👑";
+
+            btn.style.opacity = "0.7";
+
+            btn.style.pointerEvents = "none";
+
+        }
+
+    }
+
+});
 
 
 /* ==========================================

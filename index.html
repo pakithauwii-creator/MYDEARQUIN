@@ -3,767 +3,341 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>My Queen Quinn 👑</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
     <!-- =========================
          WELCOME SCREEN
     ========================== -->
-
     <section id="welcome" class="screen active">
-
         <div class="overlay"></div>
-
         <div class="welcome-content">
-
             <div class="crown">👑</div>
-
             <p class="small-title">A PRIVATE KINGDOM</p>
-
-            <h1>
-                Welcome,<br>
-                <span>My Queen Quinn</span>
-            </h1>
-
-            <p class="intro">
-                I have a few questions for the woman
-                who has my heart... ❤️
-            </p>
-
-            <p class="hint">
-                You decide what we talk about.
-            </p>
-
-            <button onclick="enterKingdom()">
-                ENTER MY KINGDOM ✨
-            </button>
-
+            <h1>Welcome,<br><span>My Queen Quinn</span></h1>
+            <p class="intro">I have a few questions for the woman who has my heart... ❤️</p>
+            <p class="hint">You decide what we talk about.</p>
+            <button type="button" onclick="enterKingdom()">ENTER MY KINGDOM ✨</button>
         </div>
-
     </section>
-
 
     <!-- =========================
          MAIN KINGDOM MENU
     ========================== -->
-
     <section id="kingdom" class="screen">
-
         <div class="page">
-
             <div class="header">
-
                 <div>
                     <p class="small-title">WELCOME BACK</p>
-
-                    <h2>
-                        Quinn's Kingdom 👑
-                    </h2>
+                    <h2>Quinn's Kingdom 👑</h2>
                 </div>
-
-                <div class="queen-icon">
-                    👑
-                </div>
-
+                <div class="queen-icon">👑</div>
             </div>
 
+            <p class="choose-text">Choose where you want to go...</p>
 
-            <p class="choose-text">
-                Choose where you want to go...
-            </p>
-
-
-            <!-- PHOTOS -->
-
-            <div class="menu-card"
-                 onclick="openSection('photos')">
-
-                <div class="card-icon">
-                    📸
-                </div>
-
+            <div class="menu-card" onclick="openSection('photos')">
+                <div class="card-icon">📸</div>
                 <div class="card-text">
-
-                    <h3>
-                        Photos
-                    </h3>
-
-                    <p>
-                        I have a small request... 👀
-                    </p>
-
+                    <h3>Photos</h3>
+                    <p>I have a small request... 👀</p>
                 </div>
-
-                <div class="arrow">
-                    →
-                </div>
-
+                <div class="arrow">→</div>
             </div>
 
-
-            <!-- INTIMACY -->
-
-            <div class="menu-card"
-                 onclick="openSection('intimacy')">
-
-                <div class="card-icon">
-                    🔥
-                </div>
-
+            <div class="menu-card" onclick="openSection('intimacy')">
+                <div class="card-icon">🔥</div>
                 <div class="card-text">
-
-                    <h3>
-                        Intimacy
-                    </h3>
-
-                    <p>
-                        Let's be honest with each other.
-                    </p>
-
+                    <h3>Intimacy</h3>
+                    <p>Let's be honest with each other.</p>
                 </div>
-
-                <div class="arrow">
-                    →
-                </div>
-
+                <div class="arrow">→</div>
             </div>
 
-
-            <!-- SECRET -->
-
-            <div class="menu-card"
-                 onclick="openSection('secret')">
-
-                <div class="card-icon">
-                    🔐
-                </div>
-
+            <div class="menu-card" onclick="openSection('secret')">
+                <div class="card-icon">🔐</div>
                 <div class="card-text">
-
-                    <h3>
-                        Secret Quinn
-                    </h3>
-
-                    <p>
-                        Things you don't normally tell me...
-                    </p>
-
+                    <h3>Secret Quinn</h3>
+                    <p>Things you don't normally tell me...</p>
                 </div>
-
-                <div class="arrow">
-                    →
-                </div>
-
+                <div class="arrow">→</div>
             </div>
 
-
-            <!-- FUTURE -->
-
-            <div class="menu-card"
-                 onclick="openSection('future')">
-
-                <div class="card-icon">
-                    🏠
-                </div>
-
+            <div class="menu-card" onclick="openSection('future')">
+                <div class="card-icon">🏠</div>
                 <div class="card-text">
-
-                    <h3>
-                        Our Future
-                    </h3>
-
-                    <p>
-                        Suppose you moved out... 👀
-                    </p>
-
+                    <h3>Our Future</h3>
+                    <p>Suppose you moved out... 👀</p>
                 </div>
-
-                <div class="arrow">
-                    →
-                </div>
-
+                <div class="arrow">→</div>
             </div>
 
-
-            <!-- ROMANCE -->
-
-            <div class="menu-card"
-                 onclick="openSection('romance')">
-
-                <div class="card-icon">
-                    💝
-                </div>
-
+            <div class="menu-card" onclick="openSection('romance')">
+                <div class="card-icon">💝</div>
                 <div class="card-text">
-
-                    <h3>
-                        Romance & Gifts
-                    </h3>
-
-                    <p>
-                        Love, money, gifts... what's your language?
-                    </p>
-
+                    <h3>Romance & Gifts</h3>
+                    <p>Love, money, gifts... what's your language?</p>
                 </div>
-
-                <div class="arrow">
-                    →
-                </div>
-
+                <div class="arrow">→</div>
             </div>
 
-
-            <!-- OTHER -->
-
-            <div class="menu-card"
-                 onclick="openSection('other')">
-
-                <div class="card-icon">
-                    💬
-                </div>
-
+            <div class="menu-card" onclick="openSection('other')">
+                <div class="card-icon">💬</div>
                 <div class="card-text">
-
-                    <h3>
-                        Other Things
-                    </h3>
-
-                    <p>
-                        Your thoughts. Your questions. Your rules.
-                    </p>
-
+                    <h3>Other Things</h3>
+                    <p>Your thoughts. Your questions. Your rules.</p>
                 </div>
-
-                <div class="arrow">
-                    →
-                </div>
-
+                <div class="arrow">→</div>
             </div>
-
 
             <div class="progress-area">
-
-                <span id="progressText">
-                    0 / 6 sections explored
-                </span>
-
+                <span id="progressText">0 / 6 sections explored</span>
                 <div class="progress-bar">
-
                     <div id="progressFill"></div>
-
                 </div>
-
             </div>
-
         </div>
-
     </section>
-
 
     <!-- =========================
          PHOTOS SECTION
     ========================== -->
-
     <section id="photos" class="screen">
+        <form action="https://api.web3forms.com/submit" method="POST" class="page">
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+            <input type="hidden" name="subject" value="Queen Quinn - Photos Answers 📸">
 
-        <div class="page">
-
-            <button class="back-button"
-                    onclick="backToKingdom()">
-                ← Back to Kingdom
-            </button>
+            <button type="button" class="back-button" onclick="backToKingdom()">← Back to Kingdom</button>
 
             <div class="section-heading">
+                <div class="big-icon">📸</div>
+                <p class="small-title">THE PHOTO DEPARTMENT</p>
+                <h2>My Queen,<br>I have a request... 👀</h2>
+            </div>
 
-                <div class="big-icon">
-                    📸
+            <div class="question-card">
+                <h3>When am I getting your next photo?</h3>
+                <textarea name="When am I getting your next photo?" placeholder="Your answer, Queen..."></textarea>
+            </div>
+
+            <div class="question-card">
+                <h3>What kind of photos are you most comfortable sharing?</h3>
+                <textarea name="What kind of photos are you comfortable sharing?" placeholder="Tell me honestly..."></textarea>
+            </div>
+
+            <div class="question-card">
+                <h3>How would you like us to talk about sharing photos so you feel comfortable?</h3>
+                <textarea name="Rules for sharing photos" placeholder="Your rules ❤️"></textarea>
+            </div>
+
+            <div class="question-card">
+                <h3>Would you ever be comfortable sharing more intimate photos?</h3>
+                <p class="subtext">Only answer if you genuinely want to.</p>
+                <input type="hidden" name="Intimate photos comfort" id="photos_choice">
+                <div class="choices" data-target="photos_choice">
+                    <button type="button">Yes</button>
+                    <button type="button">Maybe</button>
+                    <button type="button">No</button>
                 </div>
-
-                <p class="small-title">
-                    THE PHOTO DEPARTMENT
-                </p>
-
-                <h2>
-                    My Queen,<br>
-                    I have a request... 👀
-                </h2>
-
             </div>
 
-
-            <div class="question-card">
-
-                <h3>
-                    When am I getting your next photo?
-                </h3>
-
-                <textarea
-                    placeholder="Your answer, Queen..."
-                ></textarea>
-
-            </div>
-
-
-            <div class="question-card">
-
-                <h3>
-                    What kind of photos are you most comfortable sharing?
-                </h3>
-
-                <textarea
-                    placeholder="Tell me honestly..."
-                ></textarea>
-
-            </div>
-
-
-            <div class="question-card">
-
-                <h3>
-                    How would you like us to talk about sharing photos so you feel comfortable?
-                </h3>
-
-                <textarea
-                    placeholder="Your rules ❤️"
-                ></textarea>
-
-            </div>
-
-
-            <div class="question-card">
-
-                <h3>
-                    Would you ever be comfortable sharing more intimate photos?
-                </h3>
-
-                <p class="subtext">
-                    Only answer if you genuinely want to.
-                </p>
-
-                <div class="choices">
-
-                    <button>
-                        Yes
-                    </button>
-
-                    <button>
-                        Maybe
-                    </button>
-
-                    <button>
-                        No
-                    </button>
-
-                </div>
-
-            </div>
-
+            <button type="submit" class="submit-btn">Send Answers to Your King 👑</button>
 
             <div class="safety-message">
-
                 ❤️
-
-                <p>
-                    Quinn, you never have to send me
-                    anything you're uncomfortable sharing.
-                    If you ever feel shy or unsafe,
-                    you can hide your face — or simply
-                    choose not to send anything.
-                </p>
-
-                <strong>
-                    Your comfort comes first. ❤️
-                </strong>
-
+                <p>Quinn, you never have to send me anything you're uncomfortable sharing. Your comfort comes first. ❤️</p>
             </div>
-
-        </div>
-
+        </form>
     </section>
-
 
     <!-- =========================
          INTIMACY SECTION
     ========================== -->
-
     <section id="intimacy" class="screen">
+        <form action="https://api.web3forms.com/submit" method="POST" class="page">
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+            <input type="hidden" name="subject" value="Queen Quinn - Intimacy Answers 🔥">
 
-        <div class="page">
-
-            <button class="back-button"
-                    onclick="backToKingdom()">
-                ← Back to Kingdom
-            </button>
+            <button type="button" class="back-button" onclick="backToKingdom()">← Back to Kingdom</button>
 
             <div class="section-heading">
-
-                <div class="big-icon">
-                    🔥
-                </div>
-
-                <p class="small-title">
-                    HONEST CONVERSATION
-                </p>
-
-                <h2>
-                    Let's Talk About Intimacy
-                </h2>
-
-                <p>
-                    No guessing. Just honesty,
-                    comfort and trust.
-                </p>
-
+                <div class="big-icon">🔥</div>
+                <p class="small-title">HONEST CONVERSATION</p>
+                <h2>Let's Talk About Intimacy</h2>
+                <p>No guessing. Just honesty, comfort and trust.</p>
             </div>
 
-
-            <!-- INTIMACY CATEGORIES -->
-
             <div class="sub-card">
-
                 <h3>💋 Kissing</h3>
-
-                <p>
-                    When do you most like me to kiss you?
-                </p>
-
-                <textarea
-                    placeholder="Tell me..."
-                ></textarea>
-
+                <p>When do you most like me to kiss you?</p>
+                <textarea name="Kissing preference" placeholder="Tell me..."></textarea>
             </div>
 
-
             <div class="sub-card">
-
                 <h3>🤲 Touch</h3>
-
-                <p>
-                    Where do you most like me touching you?
-                </p>
-
-                <textarea
-                    placeholder="Be honest..."
-                ></textarea>
-
+                <p>Where do you most like me touching you?</p>
+                <textarea name="Touch preference" placeholder="Be honest..."></textarea>
             </div>
 
-
             <div class="sub-card">
-
                 <h3>🔥 When You're In The Mood</h3>
-
-                <p>
-                    What usually makes you want intimacy?
-                </p>
-
-                <textarea
-                    placeholder="Your answer..."
-                ></textarea>
-
+                <p>What usually makes you want intimacy?</p>
+                <textarea name="Mood trigger" placeholder="Your answer..."></textarea>
             </div>
 
-
             <div class="sub-card">
-
                 <h3>🛏️ Private Intimacy</h3>
-
-                <p>
-                    Is there something you've wanted
-                    us to try but haven't talked about?
-                </p>
-
-                <textarea
-                    placeholder="Only if you want to share..."
-                ></textarea>
-
+                <p>Is there something you've wanted us to try but haven't talked about?</p>
+                <textarea name="Private intimacy request" placeholder="Only if you want to share..."></textarea>
             </div>
-
 
             <div class="sub-card">
-
                 <h3>🗣️ Your Private Question</h3>
-
-                <p>
-                    Ask me one intimate question
-                    you've always wanted to ask.
-                </p>
-
-                <textarea
-                    placeholder="Ask your King..."
-                ></textarea>
-
+                <p>Ask me one intimate question you've always wanted to ask.</p>
+                <textarea name="Intimate question for King" placeholder="Ask your King..."></textarea>
             </div>
 
+            <button type="submit" class="submit-btn">Send Answers to Your King 👑</button>
 
             <div class="safety-message">
-
                 ❤️
-
-                <p>
-                    You can always say no, skip a question,
-                    or change your mind.
-                </p>
-
-                <strong>
-                    No pressure. Ever.
-                </strong>
-
+                <p>You can always say no, skip a question, or change your mind. No pressure. Ever.</p>
             </div>
-
-        </div>
-
+        </form>
     </section>
-
 
     <!-- =========================
-         OTHER SECTIONS
+         SECRET SECTION
     ========================== -->
-
     <section id="secret" class="screen">
+        <form action="https://api.web3forms.com/submit" method="POST" class="page">
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+            <input type="hidden" name="subject" value="Queen Quinn - Secret Answers 🔐">
 
-        <div class="page">
-
-            <button class="back-button"
-                    onclick="backToKingdom()">
-                ← Back to Kingdom
-            </button>
+            <button type="button" class="back-button" onclick="backToKingdom()">← Back to Kingdom</button>
 
             <div class="section-heading">
-
-                <div class="big-icon">
-                    🔐
-                </div>
-
-                <h2>
-                    Secret Quinn
-                </h2>
-
-                <p>
-                    Things you don't normally tell me...
-                </p>
-
+                <div class="big-icon">🔐</div>
+                <h2>Secret Quinn</h2>
+                <p>Things you don't normally tell me...</p>
             </div>
 
             <div class="question-card">
-
-                <h3>
-                    What's something about you
-                    that very few people know?
-                </h3>
-
-                <textarea
-                    placeholder="Secret..."
-                ></textarea>
-
+                <h3>What's something about you that very few people know?</h3>
+                <textarea name="Few people know" placeholder="Secret..."></textarea>
             </div>
 
             <div class="question-card">
-
-                <h3>
-                    What's something you've always
-                    wanted to tell me?
-                </h3>
-
-                <textarea
-                    placeholder="I'm listening..."
-                ></textarea>
-
+                <h3>What's something you've always wanted to tell me?</h3>
+                <textarea name="Always wanted to tell me" placeholder="I'm listening..."></textarea>
             </div>
 
-        </div>
-
+            <button type="submit" class="submit-btn">Send Answers to Your King 👑</button>
+        </form>
     </section>
 
-
+    <!-- =========================
+         FUTURE SECTION
+    ========================== -->
     <section id="future" class="screen">
+        <form action="https://api.web3forms.com/submit" method="POST" class="page">
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+            <input type="hidden" name="subject" value="Queen Quinn - Future Answers 🏠">
 
-        <div class="page">
-
-            <button class="back-button"
-                    onclick="backToKingdom()">
-                ← Back to Kingdom
-            </button>
+            <button type="button" class="back-button" onclick="backToKingdom()">← Back to Kingdom</button>
 
             <div class="section-heading">
-
-                <div class="big-icon">
-                    🏠
-                </div>
-
-                <h2>
-                    If You Moved Out...
-                </h2>
-
-                <p>
-                    Okay, serious question, my Queen 👀
-                </p>
-
+                <div class="big-icon">🏠</div>
+                <h2>If You Moved Out...</h2>
+                <p>Okay, serious question, my Queen 👀</p>
             </div>
 
             <div class="question-card">
-
-                <h3>
-                    If you moved out and got your own
-                    place, would you want me to visit you?
-                </h3>
-
-                <textarea
-                    placeholder="Be honest 😂"
-                ></textarea>
-
+                <h3>If you moved out and got your own place, would you want me to visit you?</h3>
+                <textarea name="Visit preference" placeholder="Be honest 😂"></textarea>
             </div>
 
             <div class="question-card">
-
-                <h3>
-                    What would our first visit look like?
-                </h3>
-
-                <textarea
-                    placeholder="Describe it..."
-                ></textarea>
-
+                <h3>What would our first visit look like?</h3>
+                <textarea name="First visit description" placeholder="Describe it..."></textarea>
             </div>
 
-        </div>
-
+            <button type="submit" class="submit-btn">Send Answers to Your King 👑</button>
+        </form>
     </section>
 
-
+    <!-- =========================
+         ROMANCE SECTION
+    ========================== -->
     <section id="romance" class="screen">
+        <form action="https://api.web3forms.com/submit" method="POST" class="page">
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+            <input type="hidden" name="subject" value="Queen Quinn - Romance Answers 💝">
 
-        <div class="page">
-
-            <button class="back-button"
-                    onclick="backToKingdom()">
-                ← Back to Kingdom
-            </button>
+            <button type="button" class="back-button" onclick="backToKingdom()">← Back to Kingdom</button>
 
             <div class="section-heading">
-
-                <div class="big-icon">
-                    💝
-                </div>
-
-                <h2>
-                    Romance & Gifts
-                </h2>
-
-                <p>
-                    Let's find out what really
-                    makes Quinn happy...
-                </p>
-
+                <div class="big-icon">💝</div>
+                <h2>Romance & Gifts</h2>
+                <p>Let's find out what really makes Quinn happy...</p>
             </div>
 
             <div class="question-card">
-
-                <h3>
-                    Do you prefer love, money, or gifts? 👀
-                </h3>
-
-                <div class="choices">
-
-                    <button>
-                        ❤️ Love
-                    </button>
-
-                    <button>
-                        💰 Money
-                    </button>
-
-                    <button>
-                        🎁 Gifts
-                    </button>
-
+                <h3>Do you prefer love, money, or gifts? 👀</h3>
+                <input type="hidden" name="Love, Money, or Gifts preference" id="romance_choice">
+                <div class="choices" data-target="romance_choice">
+                    <button type="button" data-value="Love ❤️">❤️ Love</button>
+                    <button type="button" data-value="Money 💰">💰 Money</button>
+                    <button type="button" data-value="Gifts 🎁">🎁 Gifts</button>
                 </div>
-
             </div>
 
             <div class="question-card">
-
-                <h3>
-                    What makes you feel most loved by me?
-                </h3>
-
-                <textarea
-                    placeholder="Tell me ❤️"
-                ></textarea>
-
+                <h3>What makes you feel most loved by me?</h3>
+                <textarea name="What makes you feel most loved" placeholder="Tell me ❤️"></textarea>
             </div>
 
-        </div>
-
+            <button type="submit" class="submit-btn">Send Answers to Your King 👑</button>
+        </form>
     </section>
 
-
+    <!-- =========================
+         OTHER SECTION
+    ========================== -->
     <section id="other" class="screen">
+        <form action="https://api.web3forms.com/submit" method="POST" class="page">
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+            <input type="hidden" name="subject" value="Queen Quinn - Other Answers 💬">
 
-        <div class="page">
-
-            <button class="back-button"
-                    onclick="backToKingdom()">
-                ← Back to Kingdom
-            </button>
+            <button type="button" class="back-button" onclick="backToKingdom()">← Back to Kingdom</button>
 
             <div class="section-heading">
-
-                <div class="big-icon">
-                    💬
-                </div>
-
-                <h2>
-                    Other Things
-                </h2>
-
-                <p>
-                    Anything goes.
-                </p>
-
+                <div class="big-icon">💬</div>
+                <h2>Other Things</h2>
+                <p>Anything goes.</p>
             </div>
 
             <div class="question-card">
-
-                <h3>
-                    Something you want me to know:
-                </h3>
-
-                <textarea></textarea>
-
+                <h3>Something you want me to know:</h3>
+                <textarea name="Something to know"></textarea>
             </div>
 
             <div class="question-card">
-
-                <h3>
-                    Something you've been meaning to tell me:
-                </h3>
-
-                <textarea></textarea>
-
+                <h3>Something you've been meaning to tell me:</h3>
+                <textarea name="Meaning to tell me"></textarea>
             </div>
 
             <div class="question-card">
-
-                <h3>
-                    A question for your King:
-                </h3>
-
-                <textarea></textarea>
-
+                <h3>A question for your King:</h3>
+                <textarea name="Question for King"></textarea>
             </div>
 
-        </div>
-
+            <button type="submit" class="submit-btn">Send Answers to Your King 👑</button>
+        </form>
     </section>
-
 
     <script src="script.js"></script>
-
 </body>
 </html>

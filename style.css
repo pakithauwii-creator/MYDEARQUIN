@@ -1,0 +1,731 @@
+/* ================================
+   MY QUEEN QUINN
+   MAIN DESIGN
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --pink: #ff5c93;
+    --light-pink: #ffb6ce;
+    --purple: #9b6cff;
+    --white: #ffffff;
+    --soft-white: rgba(255, 255, 255, 0.9);
+    --glass: rgba(255, 255, 255, 0.12);
+    --glass-border: rgba(255, 255, 255, 0.22);
+    --dark: #120b18;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background:
+        linear-gradient(
+            rgba(15, 7, 20, 0.72),
+            rgba(15, 7, 20, 0.88)
+        ),
+        url("images/background.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    overflow-x: hidden;
+}
+
+
+/* ================================
+   SCREEN SYSTEM
+================================ */
+
+.screen {
+    display: none;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.screen.active {
+    display: block;
+}
+
+
+/* ================================
+   WELCOME SCREEN
+================================ */
+
+#welcome {
+    position: relative;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px;
+}
+
+#welcome.active {
+    display: flex;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 92, 147, 0.16),
+            transparent 55%
+        );
+}
+
+.welcome-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 600px;
+
+    animation: fadeUp 1.2s ease;
+}
+
+.crown {
+    font-size: 70px;
+
+    margin-bottom: 15px;
+
+    animation: floating 3s ease-in-out infinite;
+}
+
+.small-title {
+    font-size: 11px;
+    letter-spacing: 4px;
+    opacity: 0.65;
+
+    margin-bottom: 12px;
+}
+
+h1 {
+    font-size: clamp(38px, 10vw, 70px);
+    line-height: 1.05;
+
+    margin-bottom: 20px;
+}
+
+h1 span {
+    color: var(--light-pink);
+
+    text-shadow:
+        0 0 20px rgba(255, 92, 147, 0.45);
+}
+
+.intro {
+    max-width: 430px;
+
+    margin: 0 auto 12px;
+
+    font-size: 17px;
+    line-height: 1.6;
+
+    color: var(--soft-white);
+}
+
+.hint {
+    font-size: 13px;
+    opacity: 0.6;
+
+    margin-bottom: 30px;
+}
+
+
+/* ================================
+   BUTTONS
+================================ */
+
+button {
+    border: none;
+    outline: none;
+
+    cursor: pointer;
+
+    font-family: inherit;
+}
+
+.welcome-content button {
+    padding: 16px 28px;
+
+    border-radius: 50px;
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--pink),
+            var(--purple)
+        );
+
+    box-shadow:
+        0 10px 30px rgba(255, 92, 147, 0.3);
+
+    transition: 0.3s ease;
+}
+
+.welcome-content button:hover {
+    transform: translateY(-3px) scale(1.03);
+
+    box-shadow:
+        0 15px 40px rgba(255, 92, 147, 0.45);
+}
+
+.welcome-content button:active {
+    transform: scale(0.96);
+}
+
+
+/* ================================
+   GENERAL PAGE
+================================ */
+
+.page {
+    width: 100%;
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 35px 20px 70px;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+.header h2 {
+    font-size: 30px;
+}
+
+.queen-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--glass);
+
+    border: 1px solid var(--glass-border);
+
+    backdrop-filter: blur(15px);
+
+    font-size: 27px;
+}
+
+.choose-text {
+    margin-bottom: 25px;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    font-size: 14px;
+}
+
+
+/* ================================
+   MENU CARDS
+================================ */
+
+.menu-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    width: 100%;
+
+    padding: 18px;
+
+    margin-bottom: 13px;
+
+    border-radius: 20px;
+
+    background: var(--glass);
+
+    border: 1px solid var(--glass-border);
+
+    backdrop-filter: blur(15px);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border 0.3s ease;
+}
+
+.menu-card:hover {
+    transform: translateX(6px);
+
+    background:
+        rgba(255, 255, 255, 0.17);
+
+    border-color:
+        rgba(255, 182, 206, 0.5);
+}
+
+.menu-card:active {
+    transform: scale(0.98);
+}
+
+.card-icon {
+    min-width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background:
+        rgba(255, 92, 147, 0.13);
+
+    font-size: 27px;
+}
+
+.card-text {
+    flex: 1;
+}
+
+.card-text h3 {
+    font-size: 17px;
+
+    margin-bottom: 5px;
+}
+
+.card-text p {
+    font-size: 12px;
+
+    color:
+        rgba(255, 255, 255, 0.58);
+
+    line-height: 1.4;
+}
+
+.arrow {
+    font-size: 22px;
+
+    opacity: 0.5;
+}
+
+
+/* ================================
+   PROGRESS
+================================ */
+
+.progress-area {
+    margin-top: 35px;
+
+    text-align: center;
+
+    font-size: 12px;
+
+    color:
+        rgba(255, 255, 255, 0.5);
+}
+
+.progress-bar {
+    width: 100%;
+    max-width: 300px;
+
+    height: 5px;
+
+    margin: 10px auto;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.1);
+}
+
+#progressFill {
+    width: 0%;
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--pink),
+            var(--purple)
+        );
+
+    transition: width 0.5s ease;
+}
+
+
+/* ================================
+   BACK BUTTON
+================================ */
+
+.back-button {
+    padding: 10px 16px;
+
+    margin-bottom: 30px;
+
+    border-radius: 30px;
+
+    color: white;
+
+    background:
+        rgba(255, 255, 255, 0.1);
+
+    border: 1px solid
+        rgba(255, 255, 255, 0.15);
+
+    backdrop-filter: blur(10px);
+
+    transition: 0.3s ease;
+}
+
+.back-button:hover {
+    background:
+        rgba(255, 255, 255, 0.18);
+}
+
+
+/* ================================
+   SECTION HEADING
+================================ */
+
+.section-heading {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.big-icon {
+    font-size: 55px;
+
+    margin-bottom: 10px;
+
+    animation: floating 3s ease-in-out infinite;
+}
+
+.section-heading h2 {
+    font-size: clamp(28px, 7vw, 45px);
+
+    margin-bottom: 12px;
+}
+
+.section-heading p {
+    color:
+        rgba(255, 255, 255, 0.62);
+
+    line-height: 1.5;
+}
+
+
+/* ================================
+   QUESTION CARDS
+================================ */
+
+.question-card,
+.sub-card {
+    padding: 22px;
+
+    margin-bottom: 16px;
+
+    border-radius: 22px;
+
+    background:
+        rgba(255, 255, 255, 0.09);
+
+    border: 1px solid
+        rgba(255, 255, 255, 0.15);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.question-card h3,
+.sub-card h3 {
+    font-size: 17px;
+
+    line-height: 1.5;
+
+    margin-bottom: 15px;
+}
+
+.sub-card p {
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    color:
+        rgba(255, 255, 255, 0.7);
+
+    margin-bottom: 15px;
+}
+
+.subtext {
+    font-size: 12px;
+
+    opacity: 0.55;
+
+    margin-top: -8px;
+
+    margin-bottom: 15px;
+}
+
+
+/* ================================
+   TEXTAREAS
+================================ */
+
+textarea {
+    width: 100%;
+
+    min-height: 100px;
+
+    padding: 15px;
+
+    resize: vertical;
+
+    border: 1px solid
+        rgba(255, 255, 255, 0.14);
+
+    border-radius: 15px;
+
+    outline: none;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    background:
+        rgba(0, 0, 0, 0.18);
+
+    transition: 0.3s ease;
+}
+
+textarea::placeholder {
+    color:
+        rgba(255, 255, 255, 0.35);
+}
+
+textarea:focus {
+    border-color:
+        rgba(255, 182, 206, 0.7);
+
+    background:
+        rgba(0, 0, 0, 0.25);
+
+    box-shadow:
+        0 0 20px rgba(255, 92, 147, 0.1);
+}
+
+
+/* ================================
+   CHOICE BUTTONS
+================================ */
+
+.choices {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.choices button {
+    flex: 1;
+
+    min-width: 90px;
+
+    padding: 13px;
+
+    border-radius: 14px;
+
+    color: white;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border: 1px solid
+        rgba(255, 255, 255, 0.15);
+
+    transition: 0.25s ease;
+}
+
+.choices button:hover {
+    background:
+        rgba(255, 92, 147, 0.25);
+
+    border-color:
+        var(--light-pink);
+
+    transform: translateY(-2px);
+}
+
+.choices button.selected {
+    background:
+        linear-gradient(
+            135deg,
+            var(--pink),
+            var(--purple)
+        );
+
+    border-color: transparent;
+
+    box-shadow:
+        0 8px 20px rgba(255, 92, 147, 0.25);
+}
+
+
+/* ================================
+   SAFETY MESSAGE
+================================ */
+
+.safety-message {
+    padding: 25px;
+
+    margin-top: 20px;
+
+    text-align: center;
+
+    border-radius: 22px;
+
+    background:
+        rgba(255, 92, 147, 0.09);
+
+    border: 1px solid
+        rgba(255, 182, 206, 0.15);
+
+    color:
+        rgba(255, 255, 255, 0.75);
+
+    line-height: 1.6;
+}
+
+.safety-message p {
+    margin: 10px auto;
+
+    max-width: 600px;
+
+    font-size: 13px;
+}
+
+.safety-message strong {
+    color:
+        var(--light-pink);
+}
+
+
+/* ================================
+   ANIMATIONS
+================================ */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+    .page {
+        padding:
+            25px 15px 60px;
+    }
+
+    .header h2 {
+        font-size: 25px;
+    }
+
+    .menu-card {
+        padding: 15px;
+    }
+
+    .card-icon {
+        min-width: 48px;
+        height: 48px;
+
+        font-size: 23px;
+    }
+
+    .question-card,
+    .sub-card {
+        padding: 18px;
+    }
+
+    textarea {
+        min-height: 90px;
+    }
+
+    .welcome-content {
+        padding: 10px;
+    }
+
+}
